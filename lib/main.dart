@@ -62,7 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       bmiController.text = bmiValue.toString();
 
-      if (bmi.gender == "Female") {
+      if (bmi.gender == "Male") {
         if (bmiValue < 18.5) {
           _display = "Underweight. Careful during strong wind!";
         } else if (bmiValue >= 18.5 && bmiValue < 25) {
