@@ -55,7 +55,9 @@ class _MyHomePageState extends State<MyHomePage> {
     var bmi = BMI(fullNameController.text, double.parse(heightController.text),
         double.parse(weightController.text), _gender, "");
 
-    var bmiValue = bmi.weight / bmi.height * bmi.height;
+    double height = bmi.height / 100;
+
+    var bmiValue = bmi.weight / (height * height);
 
     setState(() {
       bmiController.text = bmiValue.toString();
@@ -99,6 +101,9 @@ class _MyHomePageState extends State<MyHomePage> {
         fullNameController.text = bmi.username;
         heightController.text = bmi.height.toString();
         weightController.text = bmi.weight.toString();
+        double height = bmi.height / 100;
+        var bmiValue = bmi.weight / (height * height);
+        bmiController.text = bmiValue.toString();
         setState(() {
           _gender = bmi.gender;
           _display = bmi.status;
